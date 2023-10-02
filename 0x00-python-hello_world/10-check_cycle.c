@@ -25,7 +25,14 @@ int check_cycle(listint_t *list)
 		{
 			return (1);
 		}
+
 		check = check->next;
 	}
-	return (0);
+
+	if (check->next == NULL)
+	{
+		return (0);
+	}
+
+	return (1);
 }
