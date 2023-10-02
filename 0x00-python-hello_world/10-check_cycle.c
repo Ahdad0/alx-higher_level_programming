@@ -19,14 +19,14 @@ int check_cycle(listint_t *list)
 
 	check = list;
 
-	while (check != NULL)
+	while (check && check->next)
 	{
+		check = check->next;
+
 		if (check->next == list)
 		{
 			return (1);
 		}
-
-		check = check->next;
 	}
 
 	return (0);
