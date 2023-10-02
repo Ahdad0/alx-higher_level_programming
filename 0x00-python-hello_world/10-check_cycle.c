@@ -14,7 +14,7 @@ int check_cycle(listint_t *list)
 
 	if (list == NULL)
 	{
-		return (NULL);
+		return (0);
 	}
 
 	check = list;
