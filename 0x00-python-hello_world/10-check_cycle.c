@@ -10,20 +10,20 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *check = NULL;
+	listint_t *s = list;
+	listint_t *f = list;
 
 	if (list == NULL)
 	{
 		return (0);
 	}
 
-	check = list;
-
-	while (check && check->next)
+	while (s && f && f->next)
 	{
-		check = check->next;
+		s = s->next;
+		f = f->next->next;
 
-		if (check->next == list)
+		if (s == f)
 		{
 			return (1);
 		}
