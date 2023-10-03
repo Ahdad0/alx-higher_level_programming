@@ -11,7 +11,7 @@
 <br>*10* - **What does the `pass` statement do, and when to use it.**</br>
 <br>*11* - **How to use `range`.**</br>
 <br>*12* - **What is a function and how do you use functions.**</br>
-<br>*13* - **What does return a function that does not use any `return statement`.**</br>
+<br>*13* - **What does return a function that does not use any `return` statement.**</br>
 <br>*14* - **Scope of variables.**</br>
 <br>*15* - **What’s a traceback.**</br>
 <br>*16* - **What are the arithmetic operators and how to use them.**</br>
