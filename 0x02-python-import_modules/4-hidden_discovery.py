@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import hidden_4
-
 if __name__ == "__main__":
-    for i in dir(hidden_4):
-        print("{}".format(i))
+    import hidden_4
+    for i, name in enumerate(dir(hidden_4)):
+        if name(i) != "_":
+            print(name)
