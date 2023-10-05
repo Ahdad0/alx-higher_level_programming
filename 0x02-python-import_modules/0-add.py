@@ -4,4 +4,4 @@ from add_0 import add
 a = 1
 b = 2
 su = add(a, b)
-print("1 + 2 = {}".format(su))
+print("1 + 2 = {:d}".format(su))
