@@ -17,18 +17,19 @@ for i in sys.argv:
     o += 1
 
 if __name__ == "__main__":
-    if arg is not 3:
+    if arg != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-    match ope:
-        case "+":
-            print("{} {} {} = {}".format(a, ope, b, add(a, b)))
-        case "-":
-            print("{} {} {} = {}".format(a, ope, b, sub(a, b)))
-        case "*":
-            print("{} {} {} = {}".format(a, ope, b, mul(a, b)))
-        case "/":
-            print("{} {} {} = {}".format(a, ope, b, div(a, b)))
-        case _:
-            print("Unknown operator. Available operators: +, -, * and /")
-            sys.exit(1)
+    else:
+        match ope:
+            case "+":
+                print("{} {} {} = {}".format(a, ope, b, add(a, b)))
+            case "-":
+                print("{} {} {} = {}".format(a, ope, b, sub(a, b)))
+            case "*":
+                print("{} {} {} = {}".format(a, ope, b, mul(a, b)))
+            case "/":
+                print("{} {} {} = {}".format(a, ope, b, div(a, b)))
+            case _:
+                print("Unknown operator. Available operators: +, -, * and /")
+                sys.exit(1)
