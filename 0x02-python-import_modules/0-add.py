@@ -6,4 +6,5 @@ b = 2
 
 su = add(a, b)
 
-print("{:d} + {:d} = {:d}".format(a, b, su))
+if __name__ == "__main__":
+    print("{:d} + {:d} = {:d}".format(a, b, su))
