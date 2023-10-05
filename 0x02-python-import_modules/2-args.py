@@ -6,9 +6,9 @@ o = 0
 
 if __name__ == "__main__":
     if (size != 1):
-        print("{} arguments{}".format(size, '.' if size == 0 else ':'))
+        print("{:d} arguments{}".format(size, '.' if size == 0 else ':'))
     else:
-        print("{} arguments:".format(size))
+        print("{:d} argument:".format(size))
     for i in sys.argv:
         if (o != 0):
             print("{:d}: {}".format(o, i))
