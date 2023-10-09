@@ -12,7 +12,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *curr = *head;
 	listint_t *count = *head;
-	int store_f[10], store_l[10], i = 0, u = 0, o = 0, c = 0;
+	int store_f[100], store_l[100], i = 0, u = 0, o = 0, c = 0;
 
 	if (!(*head) && !(*head)->next)
 		return (1);
