@@ -10,33 +10,36 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *after = NULL;
-	listint_t *curr = NULL;
-	int store_f[10], store_l[10], i = 0, u = 0, o = 0;
+	listint_t *curr = *head;
+	listint_t *count = *head;
+	int store_f[10], store_l[10], i = 0, u = 0, o = 0, c = 0;
 
-	curr = *head;
-	after = *head;
-
-	after = after->next;
-
-	while (after->n != curr->n)
+	if (!(*head))
+		return (1);
+	while (count != NULL)
+	{
+		count = count->next;
+		c++;
+	}
+	while (i != (c / 2) - 1)
 	{
 		store_f[i] = curr->n;
-		after = after->next;
 		curr = curr->next;
 		i++;
 	}
-
 	store_f[i] = curr->n;
-	while (after->next != NULL)
+	if (c % 2 == 0)
+		curr = curr->next;
+	else
+		curr = curr->next->next;
+
+	while (curr->next != NULL)
 	{
-		store_l[u] = after->n;
-		after = after->next;
+		store_l[u] = curr->n;
+		curr = curr->next;
 		u++;
 	}
-
-	store_l[u] = after->n;
-
+	store_l[u] = curr->n;
 	while (u >= 0 && i >= o)
 	{
 		if (store_f[o] != store_l[u])
@@ -46,6 +49,5 @@ int is_palindrome(listint_t **head)
 		o++;
 		u--;
 	}
-
 	return (1);
 }
