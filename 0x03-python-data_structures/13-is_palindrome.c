@@ -14,14 +14,14 @@ int is_palindrome(listint_t **head)
 	listint_t *count = *head;
 	int store_f[10], store_l[10], i = 0, u = 0, o = 0, c = 0;
 
-	if (!(*head))
+	if (!(*head) && !(*head)->next)
 		return (1);
 	while (count != NULL)
 	{
 		count = count->next;
 		c++;
 	}
-	while (i != (c / 2) - 1)
+	while (i != (c / 2) - 1 && curr)
 	{
 		store_f[i] = curr->n;
 		curr = curr->next;
@@ -33,7 +33,7 @@ int is_palindrome(listint_t **head)
 	else
 		curr = curr->next->next;
 
-	while (curr->next != NULL)
+	while (curr->next)
 	{
 		store_l[u] = curr->n;
 		curr = curr->next;
