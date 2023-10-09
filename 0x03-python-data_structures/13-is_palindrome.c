@@ -11,15 +11,29 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *after = NULL;
+	listint_t *curr = NULL;
+	listint_t *check = NULL;
 
+	curr = *head;
 	after = *head;
+	check = *head;
 
 	while (after->next != NULL)
 	{
 		after = after->next;
 	}
 
-	if (after->n == (*head)->next->n)
+	curr = curr->next;
+
+	while (check->n != curr->n)
+	{
+		curr = curr->next;
+		check = check->next;
+	}
+
+	
+
+	if (after->n == (*head)->next->n && curr->n == check->n)
 	{
 		return (0);
 	}
