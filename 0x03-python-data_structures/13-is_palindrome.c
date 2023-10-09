@@ -21,6 +21,8 @@ int is_palindrome(listint_t **head)
 		count = count->next;
 		c++;
 	}
+	if (c == 1)
+		return (0);
 	while (i != (c / 2) - 1 && curr)
 	{
 		store_f[i] = curr->n;
