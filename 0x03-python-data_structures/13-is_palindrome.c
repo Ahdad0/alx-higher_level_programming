@@ -34,7 +34,6 @@ int is_palindrome(listint_t **head)
 		curr = curr->next;
 	else
 		curr = curr->next->next;
-
 	while (curr->next)
 	{
 		store_l[u] = curr->n;
@@ -45,9 +44,7 @@ int is_palindrome(listint_t **head)
 	while (u >= 0 && i >= o)
 	{
 		if (store_f[o] != store_l[u])
-		{
 			return (0);
-		}
 		o++;
 		u--;
 	}
