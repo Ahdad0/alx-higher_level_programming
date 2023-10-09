@@ -25,13 +25,10 @@ int is_palindrome(listint_t **head)
 
 	curr = curr->next;
 
-	while (check->n != curr->n)
+	while (check->next->next != NULL)
 	{
-		curr = curr->next;
 		check = check->next;
 	}
-
-	
 
 	if (after->n == (*head)->next->n && curr->n == check->n)
 	{
