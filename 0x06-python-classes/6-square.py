@@ -35,8 +35,7 @@ class Square:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
-        elif isinstance(value, int):
-            self.__size = value
+        self.__size = value
 
     @property
     def position(self):
@@ -61,14 +60,15 @@ class Square:
         print to stdout
         square with the character #
         """
-        resu = self.__size
-        ano = self.__position[0]
-        if (resu == 0):
+        if (self.size == 0):
             print()
-        else:
-            for i in range(resu):
-                for j in range(ano):
-                    print(' ', end="")
-                for x in range(resu):
-                    print('#', end="")
-                print()
+            return
+
+        print("\n" * self.position[1], end="")
+
+        for i in range(self.size):
+            for j in range(self.position[0]):
+                print(' ', end="")
+            for x in range(self.size):
+                print('#', end="")
+            print()
