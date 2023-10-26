@@ -12,15 +12,8 @@ class Square:
             size (int): size of square
             position (int): position of spaces
         """
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        if all(not isinstance(p, int) for p in position):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__size = size
-            self.__position = position
+        self.__size = size
+        self.__position = position
 
     def area(self):
         """square: return square"""
@@ -57,10 +50,11 @@ class Square:
         Args:
             value (int): set a new value
         """
-        if not isinstance(value[0], int) and not isinstance(value[1], int):
+        if type(value) is not tuple or len(value) != 2 or \
+                type(value[0]) is not int or type(value[1]) is not int or \
+                value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        self.__position = value
 
     def my_print(self):
         """
@@ -69,14 +63,12 @@ class Square:
         """
         resu = self.__size
         ano = self.__position[0]
-        anoo = self.__position[1]
         if (resu == 0):
             print()
         else:
             for i in range(resu):
                 for j in range(ano):
-                    if not anoo > 0:
-                        print(' ', end="")
+                    print(' ', end="")
                 for x in range(resu):
                     print('#', end="")
                 print()
