@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 
+"""
+    function ``add_integer`` that addition a and b
+    and return the result, if parameters are not int or float
+    raise TypeError and you must casted a and b if they are float
+"""
+
+
 def add_integer(a, b=98):
-    """addition of two integer
-    and raise TypeError if parametres
-    are not either int or float
-
-    Args:
-        a (int, float): integer or float
-        b (int, float): integer or value
-
-    Return:
-            return addition of a + b
+    """
+        return addition of a + b
     """
     if not (type(a) is int or type(a) is float):
         raise TypeError('a must be an integer')

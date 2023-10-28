@@ -30,6 +30,21 @@ Number
 	>>> add_integer(-2.3, 4)
 	2
 
+::
+
+	>>> add_integer(2.1, 3.8)
+	5
+
+::
+
+	>>> add_integer(-2, -1)
+	-3
+
+::
+
+	>>> add_integer(-2.2, -5.1)
+	-7
+
 Non-number
 ==========
 
