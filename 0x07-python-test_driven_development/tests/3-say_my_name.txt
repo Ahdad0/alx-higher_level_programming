@@ -1,0 +1,100 @@
+========================
+how to use 3-say_my_name
+========================
+
+this module defines a function ``def say_my_name(first_name, last_name="")`` that print:
+My name followed by first name and last_name
+
+======
+String
+======
+
+``def say_my_name(first_name, last_name="")`` print my name followed by first_name and last_name
+
+::
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("John", "Smith")
+	My name is John Smith
+
+::
+
+	>>> say_my_name("Bob")
+	My name is Bob 
+
+::
+
+	>>> say_my_name('k')
+	My name is k 
+
+==========
+Non-string
+==========
+
+``def say_my_name(first_name, last_name="")`` raise an exceptions
+
+::
+
+	>>> say_my_name(12, "John")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+
+	>>> say_my_name("john", 12)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+::
+
+	>>> say_my_name(12)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+
+	>>> say_my_name("12", "john")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+
+	>>> say_my_name("bob", "12")
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+::
+
+	>>> say_my_name("Bob1", "john")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+
+	>>> say_my_name("Bob", "j0ohn")
+        Traceback (most recent call last):
+        TypeError: last_name must be a string
+
+::
+
+	>>> say_my_name("12")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+
+	>>> say_my_name("Bob+", "john")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+
+	>>> say_my_name("bob", "john+")
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+::
+
+	>>> say_my_name("Bob*")
+	Traceback (most recent call last):
+        TypeError: first_name must be a string
