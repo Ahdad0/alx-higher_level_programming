@@ -22,6 +22,7 @@ class Rectangle:
             perimeter(self)
             __repr__(self)
             __del__(self)
+            bigger_or_equal(rect_1, rect_2)
     """
 
     number_of_instances = 0
@@ -52,6 +53,17 @@ class Rectangle:
         """print ... when an instance of Rectangle is deleted"""
         Rectangle.number_of_instances -= 1
         print('Bye rectangle...')
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """returns the biggest rectangle based on the area"""
+        if type(rec_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rec_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rec_1.area() >= rect_2.area():
+            return rec_1
+        return rec_2
 
     @property
     def width(self):
