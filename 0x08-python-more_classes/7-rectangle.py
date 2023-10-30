@@ -24,6 +24,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """ Initialize rectangles """
@@ -38,7 +39,7 @@ class Rectangle:
             return ''
         for j in range(self.height):
             for i in range(self.width):
-                result += '#'
+                result += str(self.print_symbol)
             result += '\n'
         return result[:-1]
 
