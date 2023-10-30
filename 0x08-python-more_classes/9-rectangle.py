@@ -23,6 +23,7 @@ class Rectangle:
             __repr__(self)
             __del__(self)
             bigger_or_equal(rect_1, rect_2)
+            square(cls, size=0)
     """
 
     number_of_instances = 0
@@ -53,6 +54,11 @@ class Rectangle:
         """print ... when an instance of Rectangle is deleted"""
         Rectangle.number_of_instances -= 1
         print('Bye rectangle...')
+
+    @classmethod
+    def square(cls, size=0):
+        """returns a new Rectangle instance"""
+        return cls(size, size)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
