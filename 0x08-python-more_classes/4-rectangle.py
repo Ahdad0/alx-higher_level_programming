@@ -20,6 +20,7 @@ class Rectangle:
             __str__(self)
             area(self)
             perimeter(self)
+            __repr__(self)
     """
     def __init__(self, width=0, height=0):
         """ Initialize rectangles """
@@ -36,6 +37,10 @@ class Rectangle:
                 result += '#'
             result += '\n'
         return result[:-1]
+
+    def __repr__(self):
+        """ return a string representation of the rectangle """
+        return f'Rectangle({self.width}, {self.height})'
 
     @property
     def width(self):
