@@ -17,11 +17,25 @@ class Rectangle:
             width(self, value)
             height(self)
             height(self, value)
+            __str__(self)
+            area(self)
+            perimeter(self)
     """
     def __init__(self, width=0, height=0):
         """ Initialize rectangles """
         self.width = width
         self.height = height
+
+    def __str__(self):
+        """print the rectangle with the character #"""
+        result = ''
+        if self.width == 0 or self.height == 0:
+            return ''
+        for j in range(self.height):
+            for i in range(self.width):
+                result += '#'
+            result += '\n'
+        return result[:-1]
 
     @property
     def width(self):
@@ -57,7 +71,7 @@ class Rectangle:
 
     def perimeter(self):
         """returns the rectangle perimeter"""
-        if self.width is 0 or self.height is 0:
+        if self.width == 0 or self.height == 0:
             result = 0
         else:
             result = (self.width + self.height) * 2
