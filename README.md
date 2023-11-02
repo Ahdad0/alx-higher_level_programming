@@ -1,7 +1,7 @@
 # Learning High-Level Programming Language with <span style="color: yellow" >Python</span>
 
 ## Description:
-*This project focuses on Python as a high-level programming language.*
+*This project focuses on Python as a high-level programming language*
 
 ## Table of Contents:
 <li><a href="https://github.com/Ahdad0/alx-higher_level_programming/tree/main/0x00-python-hello_world">0x00-python-hello_world</a>
