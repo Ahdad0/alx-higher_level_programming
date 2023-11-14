@@ -1,13 +1,29 @@
 #!/usr/bin/python3
 """
 Module contains a class Rectangle
-inherits from Base
+
+Inherits : from Base;
+Inits    : superclass' id
+Contains : private width, height, x, y
 """
 from models.base import Base
 
 
 class Rectangle(Base):
-    """define a class Rectangle"""
+    """
+    defines a class Rectangle; inherits from class Base
+    Inherited Attributes:
+        id
+    Class Attributes:
+        __width          __height
+        __x              __y
+    Methods:
+        __init__(self, width, height, x=0, y=0, id=None):
+        width(self)      width(self, value)
+        height(self)     height(self, value)
+        x(self)          x(self, value)
+        y(self)          y(self, value)
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
         """__init__"""
         super().__init__(id)
