@@ -7,6 +7,7 @@ Inits    : superclass' id, width (as size), height (as size), x, y
 Contains : public attribute size
 Prints   : [Square] (<id>) <x>/<y> - <size>
 Updates attributes : arg1=id, arg2=size, arg3=x, arg4=y
+Returns  : dictionary representation of attributes
 """
 from models.rectangle import Rectangle
 
@@ -30,6 +31,7 @@ class Square(Rectangle):
         __init__(self, size, x=0, y=0, id=None)
         size(self)       size(self, value)
         update(self, *args, **kwargs)
+        to_dictionary(self)
     """
     def __init__(self, size, x=0, y=0, id=None):
         """init"""
@@ -76,3 +78,12 @@ class Square(Rectangle):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """Return a dictionary representation"""
+        dic = {}
+        dic["id"] = self.id
+        dic["size"] = self.size
+        dic["x"] = self.x
+        dic["y"] = self.y
+        return dic
