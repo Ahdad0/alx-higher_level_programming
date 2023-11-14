@@ -117,9 +117,10 @@ class Rectangle(Base):
                 self.__class__.__name__, self.id, self.__x, self.__y,
                 self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         If args: set attributes in this order: id, width, height, x, y
+        If no args given: set attributes according to kwargs
         """
         if args:
             for i, v in enumerate(args):
@@ -133,3 +134,14 @@ class Rectangle(Base):
                     self.x = v
                 elif i == 4:
                     self.y = v
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
