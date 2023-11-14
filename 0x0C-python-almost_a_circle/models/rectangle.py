@@ -7,6 +7,7 @@ Inits    : superclass' id
 Contains : private width, height, x, y
 Contains : public method area
 Prints   : [Rectangle] (<id>) <x>/<y> - <width>/<height
+Updates  : attributes: arg1=id, arg2=width, arg3=height, arg4=x, arg5=y
 """
 
 
@@ -23,6 +24,7 @@ class Rectangle(Base):
         __x              __y
     Methods:
         __init__(self, width, height, x=0, y=0, id=None):
+        update(self, *args)
         width(self)      width(self, value)
         height(self)     height(self, value)
         x(self)          x(self, value)
@@ -114,3 +116,20 @@ class Rectangle(Base):
         return '[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}'.format(
                 self.__class__.__name__, self.id, self.__x, self.__y,
                 self.__width, self.__height)
+
+    def update(self, *args):
+        """
+        If args: set attributes in this order: id, width, height, x, y
+        """
+        if args:
+            for i, v in enumerate(args):
+                if i == 0:
+                    self.id = v
+                elif i == 1:
+                    self.width = v
+                elif i == 2:
+                    self.height = v
+                elif i == 3:
+                    self.x = v
+                elif i == 4:
+                    self.y = v
