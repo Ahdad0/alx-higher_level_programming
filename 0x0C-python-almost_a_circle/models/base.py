@@ -17,7 +17,9 @@ class Base:
     Methods:
         __init__(self, id=None)
     Static Methods:
-    to_json_string(list_dictionaries)   from_json_string(json_string)
+        to_json_string(list_dictionaries)   from_json_string(json_string)
+    Class Methods:
+        save_to_file(cls, list_objs)
     """
     __nb_objects = 0
 
@@ -35,3 +37,14 @@ class Base:
         if list_dictionaries is None:
             list_dictionaries = []
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Save json str of all instances into file"""
+        objs = []
+        if list_objs is not None:
+            for o in list_objs:
+                objs.append(cls.to_dictionary(o))
+        filename = cls.__name__ + ".json"
+        with open(filename, "w") as f:
+            f.write(cls.to_json_string(objs))
