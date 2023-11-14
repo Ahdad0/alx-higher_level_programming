@@ -100,7 +100,11 @@ class Rectangle(Base):
 
     def display(self):
         """Print to stdout a rectangle using #'s"""
+        for i in range(self.__y):
+            print('\n', end='')
         for x in range(self.__height):
+            for k in range(self.__x):
+                print(' ', end='')
             for x in range(self.width):
                 print('#', end='')
             print()
