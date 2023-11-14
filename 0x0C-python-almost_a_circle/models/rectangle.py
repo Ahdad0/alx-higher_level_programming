@@ -6,6 +6,7 @@ Inherits : from Base;
 Inits    : superclass' id
 Contains : private width, height, x, y
 Contains : public method area
+Prints   : [Rectangle] (<id>) <x>/<y> - <width>/<height
 """
 
 
@@ -26,7 +27,7 @@ class Rectangle(Base):
         height(self)     height(self, value)
         x(self)          x(self, value)
         y(self)          y(self, value)
-        area(self)
+        area(self)       display(self)
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """Init"""
@@ -95,3 +96,10 @@ class Rectangle(Base):
     def area(self):
         """return area"""
         return self.__width * self.__height
+
+    def display(self):
+        """Print to stdout a rectangle using #'s"""
+        for x in range(self.__height):
+            for x in range(self.width):
+                print('#', end='')
+            print()
