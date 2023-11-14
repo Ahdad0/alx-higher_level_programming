@@ -5,6 +5,8 @@ Module contains a class Square
 Inherits : from Rectangle;
 Inits    : superclass' id, width (as size), height (as size), x, y
 Contains : public attribute size
+Prints   : [Square] (<id>) <x>/<y> - <size>
+Updates attributes : arg1=id, arg2=size, arg3=x, arg4=y
 """
 from models.rectangle import Rectangle
 
@@ -27,6 +29,7 @@ class Square(Rectangle):
         __str__
         __init__(self, size, x=0, y=0, id=None)
         size(self)       size(self, value)
+        update(self, *args, **kwargs)
     """
     def __init__(self, size, x=0, y=0, id=None):
         """init"""
@@ -48,3 +51,28 @@ class Square(Rectangle):
         """print to stdout"""
         return '[Square] ({:d}) {:d}/{:d} - {:d}'.format(
                 self.id, self.x, self.y, self.size)
+
+    def update(self, *args, **kwargs):
+        """
+        If args: set attributes in this order: id, width, height, x, y
+        If no args given: set attributes according to kwargs
+        """
+        if args:
+            for k, v in enumerate(args):
+                if k == 0:
+                    self.id = v
+                elif k == 1:
+                    self.size = v
+                elif k == 2:
+                    self.x = v
+                else:
+                    self.y = v
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "size" in kwargs:
+                self.size = kwargs["size"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
