@@ -8,6 +8,7 @@ Contains : private width, height, x, y
 Contains : public method area
 Prints   : [Rectangle] (<id>) <x>/<y> - <width>/<height
 Updates  : attributes: arg1=id, arg2=width, arg3=height, arg4=x, arg5=y
+Returns  : dictionary representation of attributes
 """
 
 
@@ -30,7 +31,7 @@ class Rectangle(Base):
         x(self)          x(self, value)
         y(self)          y(self, value)
         area(self)       display(self)
-        __str__(self)
+        __str__(self)    to_dictionary(self)
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """Init"""
@@ -145,3 +146,13 @@ class Rectangle(Base):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """Return a dictionary representation"""
+        d = {}
+        d["id"] = self.id
+        d["width"] = self.width
+        d["height"] = self.height
+        d["x"] = self.x
+        d["y"] = self.y
+        return d
