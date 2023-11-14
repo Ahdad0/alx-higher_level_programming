@@ -37,21 +37,21 @@ class Rectangle(Base):
         return self.__y
 
     @width.setter
-    def width(self, width):
+    def width(self, value):
         """setter width"""
-        self.__width = width
+        self.__width = value
 
     @height.setter
-    def height(self, height):
+    def height(self, value):
         """setter height"""
-        self.__height = height
+        self.__height = value
 
     @x.setter
-    def x(self, x):
+    def x(self, value):
         """setter x"""
-        self__x = x
+        self__x = value
 
     @y.setter
-    def y(self, y):
+    def y(self, value):
         """setter y"""
-        self.__y = y
+        self.__y = value
