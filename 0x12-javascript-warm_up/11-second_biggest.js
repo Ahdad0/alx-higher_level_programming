@@ -16,7 +16,8 @@ let list = [];
 let i;
 
 for (i = 0; !(process.argv[i + 2] === undefined); i++) {
-  list[i] = process.argv[i + 2];
+  const st = process.argv[i + 2];
+  list[i] = parseInt(st);
 }
 
 if (list[0] === undefined || list[1] === undefined) {
