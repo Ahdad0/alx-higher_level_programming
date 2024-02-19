@@ -19,16 +19,16 @@ if __name__ == '__main__':
 
     cur = db.cursor()
 
-    cur.execute("SELECT * "
-                "FROM states "
-                "WHERE name='{:s}' "
-                "ORDER BY id ASC".format(sys.argv[4]))
+    sql = """SELECT *
+            FROM states
+            WHERE name=%s ORDER BY id ASC"""
+
+    cur.execute(sql, (sys.argv[4],))
 
     row = cur.fetchall()
 
     for r in row:
-        if r[1] == sys.argv[4]:
-            print(r)
+        print(r)
 
     cur.close()
     db.close()
