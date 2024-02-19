@@ -26,7 +26,8 @@ if __name__ == '__main__':
     row = cur.fetchall()
 
     for r in row:
-        print(r)
+        if r[1] == sys.argv[4]:
+            print(r)
 
     cur.close()
     db.close()
