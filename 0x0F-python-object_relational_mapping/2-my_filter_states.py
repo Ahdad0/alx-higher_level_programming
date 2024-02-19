@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     cur.execute("SELECT * "
                 "FROM states "
-                "WHERE name='{}' "
+                "WHERE name='{:s}' "
                 "ORDER BY id ASC".format(sys.argv[4]))
 
     row = cur.fetchall()
