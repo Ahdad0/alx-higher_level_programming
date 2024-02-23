@@ -14,6 +14,9 @@ if __name__ == "__main__":
     session = Session()
     obj = session.query(State).first()
 
-    print(f"{obj.id}: {obj.name}")
+    if not obj.name:
+        print("Nothing")
+    else:
+        print(f"{obj.id}: {obj.name}")
 
     session.close()
