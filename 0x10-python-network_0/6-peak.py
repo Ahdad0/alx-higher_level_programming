@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """define a function"""
 
+ret = int or None
 
-def find_peak(list_of_integers):
+
+def find_peak(list_of_integers) -> ret:
     """find the peak in the list"""
     listLen = len(list_of_integers)
     if listLen == 0:
